@@ -1,1 +1,1 @@
-# GeekBrains, Основы C# в Unity Липин Дмитрий
+# GeekBrains, Основы C# в Unity, Липин Дмитрий
