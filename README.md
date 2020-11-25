@@ -1,1 +1,1 @@
-# base-csharp-in-unity
+# GeekBrains, Основы C# в Unity Липин Дмитрий
