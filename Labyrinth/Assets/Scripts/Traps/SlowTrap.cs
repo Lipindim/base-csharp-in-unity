@@ -1,12 +1,18 @@
-﻿namespace Labyrinth
+﻿using UnityEngine;
+
+namespace Labyrinth
 {
 
-    public class SlowTrap : IInteractiveObject
+    public class SlowTrap : InteractiveObject
     {
-        public void Interaction()
+        public float SpeedMultiplier
         {
-            //ToDo: Сделать замедление игрока.
-            throw new System.NotImplementedException();
+            get
+            {
+                return _speedMultiplier;
+            }
         }
+
+        [SerializeField] private float _speedMultiplier = 0.5f;
     }
 }
