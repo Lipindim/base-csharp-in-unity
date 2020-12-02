@@ -25,13 +25,17 @@ namespace Labyrinth
         [SerializeField] private float _speed = 3.0f;
 
         private Rigidbody _rigidbody;
+        private Renderer _renderer;
 
         private float _initialSpeed;
         private bool _isInvulnerability;
+        private Color _initialColor;
 
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody>();
+            _renderer = GetComponent<Renderer>();
+            _initialColor = _renderer.material.color;
             _initialSpeed = _speed;
         }
 
@@ -59,6 +63,7 @@ namespace Labyrinth
         public void SetTemporaryInvulnerability(float time)
         {
             _isInvulnerability = true;
+            _renderer.material.color = Color.green;
             Invoke(nameof(ResetInvulnerability), time);
         }
 
@@ -70,6 +75,7 @@ namespace Labyrinth
         private void ResetInvulnerability()
         {
             _speed = _initialSpeed;
+            _renderer.material.color = _initialColor;
         }
     }
 }

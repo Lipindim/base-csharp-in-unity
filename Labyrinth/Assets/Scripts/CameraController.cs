@@ -14,6 +14,8 @@ namespace Labyrinth
         private void Start()
         {
             _player = GameObject.FindGameObjectWithTag("Player");
+            if (_player == null)
+                throw new PlayerNotFoundException();
         }
 
         private void LateUpdate()
