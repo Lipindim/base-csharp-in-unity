@@ -1,10 +1,17 @@
-﻿namespace Labyrinth
+﻿using UnityEngine;
+
+namespace Labyrinth
 {
-    public class SpeedBost : IInteractiveObject
+    public class SpeedBost : InteractiveObject
     {
-        public void Interaction()
+        public float SpeedMultiplier
         {
-            //ToDo: Увеличить скорость
+            get
+            {
+                return _speedMultiplier;
+            }
         }
+
+        [SerializeField] private float _speedMultiplier = 2.0f;
     }
 }
