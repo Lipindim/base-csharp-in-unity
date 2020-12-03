@@ -9,16 +9,18 @@ namespace Labyrinth
 
         private Player _player;
 
-        void Start()
+        private void Start()
         {
             _player = FindObjectOfType<Player>();
+            if (_player == null)
+                throw new PlayerNotFoundException();
 
             var interactiveObjects = FindObjectsOfType<InteractiveObject>();
             foreach (var interactiveObject in interactiveObjects)
-                interactiveObject.OnInteraction += InteractiveObject_OnInteraction1;
+                interactiveObject.OnInteraction += InteractiveObjectOnInteraction;
         }
 
-        private void InteractiveObject_OnInteraction1(InteractiveObject interactiveObject)
+        private void InteractiveObjectOnInteraction(InteractiveObject interactiveObject)
         {
             if (interactiveObject is SpeedBost speedBost)
             {
