@@ -12,6 +12,15 @@ namespace Labyrinth
             }
         }
 
+        public float BostDuration
+        {
+            get
+            {
+                return _bostDuration;
+            }
+        }
+
         [SerializeField] private float _speedMultiplier = 2.0f;
+        [SerializeField] private float _bostDuration = 5.0f;
     }
 }
