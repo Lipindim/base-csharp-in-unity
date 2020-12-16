@@ -40,7 +40,6 @@ namespace Labyrinth
         {
             _speed = playerData.Speed;
             _initialSpeed = _speed;
-            Debug.Log(_initialSpeed);
         }
 
         public void SetSpeed(float speed, float time)

@@ -11,10 +11,10 @@ namespace Labyrinth
         private Camera _camera;
 
 
-        public CameraController(CameraSettings cameraSettings, GameObject player)
+        public CameraController(CameraSettings cameraSettings, GameObject player, Camera camera)
         {
             _player = player;
-            _camera = Camera.main;
+            _camera = camera;
             _cameraSettings = cameraSettings;
         }
 

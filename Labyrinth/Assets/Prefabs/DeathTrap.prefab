@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 3697301807583337217}
   - component: {fileID: 3697301807583337216}
   - component: {fileID: 3697301807583337219}
-  m_Layer: 0
+  - component: {fileID: 2656125899294938003}
+  - component: {fileID: 6883979905691037545}
+  m_Layer: 8
   m_Name: DeathTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,3 +95,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2656125899294938003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697301807583337229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef1d60bfa08cc6b4b87a2751b5897850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ico: {fileID: 5884720654972085542, guid: f032c4d2fe2133a46a2f99434151608e, type: 3}
+--- !u!114 &6883979905691037545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697301807583337229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bef5ba5895b2c14d980d8a375251358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
