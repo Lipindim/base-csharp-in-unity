@@ -6,6 +6,7 @@ namespace Labyrinth
 
     public abstract class InteractiveObject : MonoBehaviour, IDisposable
     {
+        public abstract InteractiveObjectEnum Type { get; }
         public event Action<InteractiveObject> OnInteraction;
         public bool IsInteracted { get; private set; }
         public virtual void Interaction()

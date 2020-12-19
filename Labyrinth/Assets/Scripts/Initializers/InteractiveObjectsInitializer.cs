@@ -22,7 +22,7 @@ namespace Labyrinth
                         }
                     case InteractiveObjectEnum.DeathTrap:
                         {
-                            var gameObject = GameObject.Instantiate(interactiveObjectSettings.DeathTrap, item.Position, Quaternion.identity);
+                            var gameObject = GameObject.Instantiate(interactiveObjectSettings.DeathTrapPrefab, item.Position, Quaternion.identity);
                             gameObjects.Add(gameObject);
                             break;
                         }

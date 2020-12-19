@@ -444,6 +444,7 @@ MonoBehaviour:
   _radarSettings: {fileID: 11400000, guid: 590f98f171186454eac062fa1c35ae01, type: 2}
   _interactiveObjectSettings: {fileID: 11400000, guid: 4caebc44d1edcdc429341711713fbf91,
     type: 2}
+  count: 10
 --- !u!4 &13357652
 Transform:
   m_ObjectHideFlags: 0
