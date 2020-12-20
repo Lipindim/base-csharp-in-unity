@@ -20,6 +20,9 @@ namespace Labyrinth
         [SerializeField] private RadarSettings _radarSettings;
         [SerializeField] private InteractiveObjectSettings _interactiveObjectSettings;
 
+        //это только для 3-го задания
+        public int count = 10;
+
         private List<IUpdate> _updatebles = new List<IUpdate>();
         private List<object> _notUpdatebles = new List<object>();
         private UiController _uiController;
@@ -67,7 +70,7 @@ namespace Labyrinth
                     InteractiveObjectSettings interactiveObjectSettings = new InteractiveObjectSettings()
                     {
                         Objects = savedData.InteractiveObjects,
-                        DeathTrap = _interactiveObjectSettings.DeathTrap,
+                        DeathTrapPrefab = _interactiveObjectSettings.DeathTrapPrefab,
                         InvulnerabilityBostPrefab = _interactiveObjectSettings.InvulnerabilityBostPrefab,
                         RequiredKeyPrefab = _interactiveObjectSettings.RequiredKeyPrefab,
                         SlowTrapPrefab = _interactiveObjectSettings.SlowTrapPrefab,

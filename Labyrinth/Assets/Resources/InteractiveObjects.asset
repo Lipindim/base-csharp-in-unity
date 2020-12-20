@@ -63,7 +63,7 @@ MonoBehaviour:
     Position: {x: 21, y: 0.3, z: 13.1}
   SlowTrapPrefab: {fileID: 5283598316167766589, guid: bd2ba713859909f4f962e5e70ec1581c,
     type: 3}
-  DeathTrap: {fileID: 3697301807583337229, guid: f3b18ccb50b308c44910f545ce53ffbb,
+  DeathTrapPrefab: {fileID: 3697301807583337229, guid: f3b18ccb50b308c44910f545ce53ffbb,
     type: 3}
   SpeedBoostPrefab: {fileID: 2556879193592757291, guid: a3542abb421f5f6409928d669a4f2a7c,
     type: 3}

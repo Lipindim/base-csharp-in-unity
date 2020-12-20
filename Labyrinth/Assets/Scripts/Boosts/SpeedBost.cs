@@ -20,6 +20,8 @@ namespace Labyrinth
             }
         }
 
+        public override InteractiveObjectEnum Type => InteractiveObjectEnum.SpeedBost;
+
         [SerializeField] private float _speedMultiplier = 2.0f;
         [SerializeField] private float _bostDuration = 5.0f;
     }

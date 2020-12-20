@@ -8,7 +8,7 @@ namespace Labyrinth
     {
         public InteractiveObjectModel[] Objects;
         public GameObject SlowTrapPrefab;
-        public GameObject DeathTrap;
+        public GameObject DeathTrapPrefab;
         public GameObject SpeedBoostPrefab;
         public GameObject RequiredKeyPrefab;
         public GameObject InvulnerabilityBostPrefab;
