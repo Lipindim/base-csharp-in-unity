@@ -1,12 +1,20 @@
-﻿
-
-using UnityEngine;
-
-namespace Labyrinth
+﻿namespace Labyrinth
 {
 
     public class PlayerModel
     {
+
+        #region Fields
+
+        private float _speed;
+        private float _initialSpeed;
+        private bool _isInvulnerability;
+
+        #endregion
+
+
+        #region Properties
+
         public float InitialSpeed
         {
             get
@@ -31,16 +39,21 @@ namespace Labyrinth
             }
         }
 
-        private float _speed;
-        private float _initialSpeed;
-        private bool _isInvulnerability;
+        #endregion
 
+
+        #region ClassLifeCycles
 
         public PlayerModel(PlayerData playerData)
         {
             _speed = playerData.Speed;
             _initialSpeed = _speed;
         }
+
+        #endregion
+
+
+        #region Methods
 
         public void SetSpeed(float speed, float time)
         {
@@ -61,5 +74,8 @@ namespace Labyrinth
         {
             _isInvulnerability = false;
         }
+
+        #endregion
+
     }
 }

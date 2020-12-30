@@ -4,6 +4,18 @@ using UnityEngine.UI;
 
 public class RadarObject : MonoBehaviour
 {
+
+    #region Fields
+
+    [SerializeField] private Image _ico;
+
+    private bool _isActive = true;
+
+    #endregion
+
+
+    #region Properties
+
     public bool IsActive
     {
         get
@@ -27,13 +39,16 @@ public class RadarObject : MonoBehaviour
         }
     }
 
-    [SerializeField] private Image _ico;
+    #endregion
 
-    private bool _isActive = true;
+
+    #region UnityMethods
 
     private void OnDestroy()
     {
         _isActive = false;
     }
+
+    #endregion
 
 }

@@ -1,18 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 namespace Labyrinth
 {
     public class UiController
     {
+
+        #region Fields
+
         private GameObject _victoryImage;
         private GameObject _restartButton;
+
+        #endregion
+
+
+        #region ClassLifeCycles
 
         public UiController(GameObject restartButton, GameObject victoryImage)
         {
@@ -21,6 +27,11 @@ namespace Labyrinth
             var button = restartButton.GetComponent<Button>();
             _restartButton.SetActive(false);
         }
+
+        #endregion
+
+
+        #region Methods
 
         public void RestartGame()
         {
@@ -39,5 +50,8 @@ namespace Labyrinth
         {
             _victoryImage.SetActive(true);
         }
+
+        #endregion
+
     }
 }

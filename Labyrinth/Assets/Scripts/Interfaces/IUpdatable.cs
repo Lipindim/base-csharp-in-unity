@@ -1,7 +1,7 @@
 ﻿namespace Labyrinth
 {
 
-    public interface IUpdate
+    public interface IUpdatable
     {
         void Update(float deltaTime);
     }

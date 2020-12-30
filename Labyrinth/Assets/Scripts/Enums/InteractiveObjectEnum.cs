@@ -2,10 +2,10 @@
 {
     public enum InteractiveObjectEnum
     {
-        SlowTrap,
-        DeathTrap,
-        RequiredKey,
-        SpeedBost,
-        InvulnerabilityBost
+        SlowTrap = 0,
+        DeathTrap = 1,
+        RequiredKey = 2,
+        SpeedBost = 3,
+        InvulnerabilityBost = 4
     }
 }

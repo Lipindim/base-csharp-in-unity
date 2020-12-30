@@ -7,6 +7,19 @@ namespace Labyrinth
 {
     public class KeyCollectedController
     {
+
+        #region Fields
+
+        private Action _onKeyCollected;
+
+        private int _keysCount;
+        private int _keysCollected;
+
+        #endregion
+
+
+        #region Properties
+
         public bool IsKeyCollected
         {
             get
@@ -15,11 +28,10 @@ namespace Labyrinth
             }
         }
 
-        private int _keysCount;
-        private int _keysCollected;
+        #endregion
 
-        private Action _onKeyCollected;
 
+        #region ClassLifeCycles
 
         public KeyCollectedController(IEnumerable<InteractiveObject> interactiveObjects, Action onKeyCollected)
         {
@@ -35,6 +47,11 @@ namespace Labyrinth
             _onKeyCollected = onKeyCollected;
         }
 
+        #endregion
+
+
+        #region Methods
+
         private void RequiredKey_OnInteraction(InteractiveObject obj)
         {
             _keysCollected++;
@@ -48,5 +65,8 @@ namespace Labyrinth
                 Debug.Log("Ключ собран.");
             }
         }
+
+        #endregion
+
     }
 }

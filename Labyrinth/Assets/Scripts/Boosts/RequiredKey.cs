@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-namespace Labyrinth
+﻿namespace Labyrinth
 {
     public class RequiredKey : InteractiveObject
     {
