@@ -6,15 +6,29 @@ namespace Labyrinth
 {
     public class SaveDataRepository
     {
+
+        #region Fields
+
         private readonly IData<SavedData> _data;
         private const string _folderName = "dataSave";
         private const string _fileName = "data.bat";
         private readonly string _path;
+
+        #endregion
+
+
+        #region ClassLifeCycles
+
         public SaveDataRepository()
         {
             _data = new JsonData<SavedData>();
             _path = Path.Combine(Application.dataPath, _folderName);
         }
+
+        #endregion
+
+
+        #region Methods
 
         public void Save(Vector3 playerPosition, IEnumerable<GameObject> interactiveObjects)
         {
@@ -68,5 +82,8 @@ namespace Labyrinth
             savedData = _data.Load(file);
             return true;
         }
+
+        #endregion
+
     }
 }

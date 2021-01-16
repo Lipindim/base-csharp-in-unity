@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,6 +6,9 @@ namespace Labyrinth
 {
     public class GameController : MonoBehaviour
     {
+
+        #region Fields
+
         [SerializeField] private CameraSettings _cameraSettings;
         [SerializeField] private PlayerData _playerData;
         [SerializeField] private AudioData _audioData;
@@ -20,12 +22,14 @@ namespace Labyrinth
         [SerializeField] private RadarSettings _radarSettings;
         [SerializeField] private InteractiveObjectSettings _interactiveObjectSettings;
 
-        //это только для 3-го задания
-        public int count = 10;
-
-        private List<IUpdate> _updatebles = new List<IUpdate>();
+        private List<IUpdatable> _updatebles = new List<IUpdatable>();
         private List<object> _notUpdatebles = new List<object>();
         private UiController _uiController;
+
+        #endregion
+
+
+        #region UnityMethods
 
         private void Start()
         {
@@ -52,6 +56,20 @@ namespace Labyrinth
             _notUpdatebles.Add(new AudioPlayer(_audioData, interactives, playerModel, audioSource));
             _notUpdatebles.Add(new KeyCollectedController(interactives, _uiController.Victory));
         }
+
+        private void Update()
+        {
+            foreach (var updateble in _updatebles)
+            {
+                updateble.Update(Time.deltaTime);
+            }
+
+        }
+
+        #endregion
+
+
+        #region Methods
 
         private void Load()
         {
@@ -81,18 +99,12 @@ namespace Labyrinth
             }
         }
 
-        private void Update()
-        {
-            foreach (var updateble in _updatebles)
-            {
-                updateble.Update(Time.deltaTime);
-            }
-
-        }
-
         public void Restart()
         {
             _uiController.RestartGame();
         }
+
+        #endregion
+
     }
 }

@@ -4,13 +4,20 @@ using UnityEngine;
 
 namespace Labyrinth
 {
-    public class MoveController : IUpdate
+    public class MoveController : IUpdatable
     {
+
+        #region Fields
 
         private PlayerModel _player;
         private Rigidbody _playerRigidbody;
 
         private float _effectDuration;
+
+        #endregion
+
+
+        #region ClassLifeCycles
 
         public MoveController(IEnumerable<InteractiveObject> interactiveObjects, PlayerModel player, Rigidbody playerRigidbody)
         {
@@ -26,6 +33,11 @@ namespace Labyrinth
                     slowTrap.OnInteraction += SlowTrapOnInteraction;
             }
         }
+
+        #endregion
+
+
+        #region Methods
 
         private void SlowTrapOnInteraction(InteractiveObject interactiveObject)
         {
@@ -46,11 +58,6 @@ namespace Labyrinth
             _effectDuration = speedBost.BostDuration;
         }
 
-        public void Update(float deltaTime)
-        {
-            Move();
-            ResetSpeed(deltaTime);
-        }
 
         private void ResetSpeed(float deltaTime)
         {
@@ -73,5 +80,19 @@ namespace Labyrinth
 
             _playerRigidbody.AddForce(movement * _player.CurrentSpeed);
         }
+
+        #endregion
+
+
+        #region IUpdateble
+
+        public void Update(float deltaTime)
+        {
+            Move();
+            ResetSpeed(deltaTime);
+        }
+
+        #endregion
+
     }
 }

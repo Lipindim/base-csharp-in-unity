@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,12 +7,29 @@ namespace Labyrinth
 {
     public class AudioPlayer
     {
+
+        #region Fields
+
         private PlayerModel _playerModel;
         private AudioData _audioData;
         private AudioSource _audioSource;
 
+        #endregion
+
+
+        #region ClassLifeCycles
+
         public AudioPlayer(AudioData audioData, IEnumerable<InteractiveObject> interactiveObjects, PlayerModel playerModel, AudioSource audioSource)
         {
+            if (audioData == null)
+                throw new ArgumentNullException(nameof(audioData));
+            if (interactiveObjects == null)
+                throw new ArgumentNullException(nameof(interactiveObjects));
+            if (playerModel == null)
+                throw new ArgumentNullException(nameof(playerModel));
+            if (audioSource == null)
+                throw new ArgumentNullException(nameof(audioSource));
+
             if (audioData.SpeedBostAudio == null)
                 throw new PrefabNotFoundException(nameof(audioData.SpeedBostAudio));
             if (audioData.InvulnerabilityBostAudio == null)
@@ -31,6 +48,10 @@ namespace Labyrinth
                 interactiveObject.OnInteraction += InteractiveObjectOnInteraction;
         }
 
+        #endregion
+
+
+        #region Methods
         private void InteractiveObjectOnInteraction(InteractiveObject interactiveObject)
         {
             if (interactiveObject is SpeedBost speedBost)
@@ -58,5 +79,7 @@ namespace Labyrinth
                 }
             }
         }
+        #endregion
+
     }
 }

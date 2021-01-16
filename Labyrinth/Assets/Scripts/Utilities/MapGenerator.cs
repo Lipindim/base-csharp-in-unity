@@ -7,6 +7,9 @@ namespace Labyrinth
 
     public class MapGenerator : MonoBehaviour
     {
+
+        #region Fields
+
         [SerializeField] private GameObject _singleWall;
 
         [SerializeField] private int _rows = 30;
@@ -16,6 +19,11 @@ namespace Labyrinth
         private static System.Random _rand = new System.Random();
         private GenCell[,] map;
 
+        #endregion
+
+
+        #region ClassLifeCycles
+
         private void Start()
         {
             map = new GenCell[_rows, _columns];
@@ -24,6 +32,11 @@ namespace Labyrinth
             RemoveWall(ref map);
             BuildMap(map);
         }
+
+        #endregion
+
+
+        #region Methods
 
         private void RemoveWall(ref GenCell[,] M)
         {
@@ -118,5 +131,8 @@ namespace Labyrinth
                 }
             }
         }
+
+        #endregion
+
     }
 }

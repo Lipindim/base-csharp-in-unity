@@ -4,14 +4,22 @@ using UnityEngine;
 
 namespace Labyrinth
 {
-    public class RadarController : IUpdate
+    public class RadarController : IUpdatable
     {
+
+        #region Fields
+
         private RadarSettings _radarSettings;
         private List<RadarModel> _radarObjects = new List<RadarModel>();
         private GameObject _minimap;
         private GameObject _player;
 
         private float _realSqrRadius;
+
+        #endregion
+
+
+        #region ClassLifeCycles
 
         public RadarController(RadarSettings radarSettings, RadarObject[] radarObjects, GameObject minimap, GameObject player)
         {
@@ -33,6 +41,11 @@ namespace Labyrinth
                 });
             }
         }
+
+        #endregion
+
+
+        #region IUpdateble
 
         public void Update(float deltaTime)
         {
@@ -57,5 +70,8 @@ namespace Labyrinth
                 }
             }
         }
+
+        #endregion
+
     }
 }
